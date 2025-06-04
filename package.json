@@ -1,5 +1,5 @@
 {
-  "name": "nextplate",
+  "name": "shareville",
   "private": true,
   "scripts": {
     "build": "turbo run build",
