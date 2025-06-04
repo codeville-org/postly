@@ -1,0 +1,6 @@
+@import "@repo/ui/globals.css";
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+}
