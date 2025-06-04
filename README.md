@@ -1,13 +1,13 @@
-# Postly
+# Shareville
 
-**Postly** is a third-party web application tool designed to streamline social media post management, starting with seamless integration for scheduling and instant posting to Facebook pages. It provides a reusable, embeddable widget that can be integrated into websites (e.g., AI image generation platforms) to allow users to connect their Facebook accounts, share media, and schedule posts effortlessly. The tool prioritizes an intuitive user experience for linking accounts and managing posts, with a robust backend to handle data and scheduling tasks.
+**Shareville** is a third-party web application tool designed to simplify social media post management, starting with seamless integration for scheduling and instant posting to Facebook pages. It offers an embeddable widget that can be integrated into websites (e.g., AI image generation platforms) to enable users to connect their Facebook accounts, share media, and schedule posts with ease. Shareville prioritizes a user-friendly experience for linking accounts and managing posts, backed by a robust infrastructure for data and scheduling tasks.
 
 ## Features
-- **Easy Facebook Integration**: Users can securely connect their Facebook accounts and pages via a simple OAuth flow.
-- **Post Scheduling & Instant Posting**: Share images or media to Facebook pages instantly or schedule posts through an intuitive widget interface.
-- **Reusable Widget**: Embeddable in any website (e.g., NextJS-based platforms) to manage social media posting without code duplication.
-- **Status Tracking**: Webhooks provide real-time updates on post statuses, viewable on the host website.
-- **Scalable Architecture**: Built to support integration with multiple websites and future social media platforms.
+- **Seamless Facebook Integration**: Users can securely connect their Facebook accounts and pages through a straightforward OAuth flow.
+- **Post Scheduling & Instant Sharing**: Share images or media to Facebook pages instantly or schedule posts via an intuitive widget.
+- **Reusable Widget**: Easily embeddable in any website (e.g., NextJS-based platforms) to manage social media posting without code duplication.
+- **Real-Time Status Updates**: Webhooks deliver live updates on post statuses, viewable on the host website.
+- **Scalable Design**: Built to support integration with multiple websites and future social media platforms.
 
 ## Tech Stack
 - **Frontend Widget**: NextJS, React, TypeScript, Tailwind CSS, Shadcn UI
@@ -18,15 +18,15 @@
 - **Hosting**: Self-managed VPS Server
 
 ## Purpose
-Postly solves the problem of repetitive social media integration by offering a standalone, reusable tool that simplifies connecting and posting to Facebook pages. It’s designed for scalability, enabling seamless integration with various websites while providing a user-friendly experience for post management.
+Shareville eliminates the need for repetitive social media integration by providing a standalone, reusable tool that simplifies connecting and posting to Facebook pages. It’s designed for scalability, enabling seamless integration with various websites while offering an effortless post management experience.
 
 ## Getting Started
-1. Clone the repository: `git clone https://github.com/[your-username]/postly.git`
+1. Clone the repository: `git clone https://github.com/[your-username]/shareville.git`
 2. Install dependencies: `bun install` (backend) and `npm install` (frontend)
 3. Configure environment variables for PostgreSQL, Redis, and Facebook API credentials.
 4. Run the backend: `bun run start`
 5. Run the frontend widget: `npm run dev`
-6. Integrate the Postly widget into your NextJS website and start posting!
+6. Integrate the Shareville widget into your NextJS website and start sharing!
 
 ## Contributing
 Contributions are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for details on how to submit pull requests, report issues, or suggest features.
