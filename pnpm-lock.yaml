@@ -291,6 +291,40 @@ importers:
         specifier: ^5
         version: 5.8.2
 
+<<<<<<< HEAD
+=======
+  packages/database:
+    dependencies:
+      '@repo/eslint-config':
+        specifier: workspace:^
+        version: link:../eslint-config
+      '@repo/typescript-config':
+        specifier: workspace:^
+        version: link:../typescript-config
+      drizzle-orm:
+        specifier: ^0.44.1
+        version: 0.44.1(@types/pg@8.15.4)(bun-types@1.2.15)(kysely@0.28.2)(pg@8.16.0)
+      drizzle-zod:
+        specifier: ^0.7.1
+        version: 0.7.1(drizzle-orm@0.44.1(@types/pg@8.15.4)(bun-types@1.2.15)(kysely@0.28.2)(pg@8.16.0))(zod@3.25.55)
+      pg:
+        specifier: ^8.16.0
+        version: 8.16.0
+    devDependencies:
+      '@types/node':
+        specifier: ^22.15.30
+        version: 22.15.30
+      '@types/pg':
+        specifier: ^8.15.4
+        version: 8.15.4
+      tsup:
+        specifier: ^8.0.1
+        version: 8.5.0(jiti@2.4.2)(postcss@8.5.4)(typescript@5.8.2)(yaml@2.8.0)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.8.2
+
+>>>>>>> faa5ba3 (Add: Database Package Seperation for Schemas)
   packages/eslint-config:
     devDependencies:
       '@eslint/js':

@@ -1,4 +1,3 @@
-// import { desc, eq } from "drizzle-orm";
 import { eq } from "drizzle-orm";
 import * as HttpStatusCodes from "stoker/http-status-codes";
 import * as HttpStatusPhrases from "stoker/http-status-phrases";
@@ -6,7 +5,7 @@ import * as HttpStatusPhrases from "stoker/http-status-phrases";
 import type { AppRouteHandler } from "@/types";
 
 import { db } from "@/db";
-import { integration } from "@/db/schema";
+import { integration } from "@repo/database/schemas";
 
 import type { GetOneRoute, UpdateRoute } from "./integrations.routes";
 
