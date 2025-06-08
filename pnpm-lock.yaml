@@ -297,11 +297,6 @@ importers:
         specifier: ^5
         version: 5.8.2
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> aab55d57029854e18379b45754f87bc27bf51fc7
   packages/database:
     dependencies:
       '@repo/eslint-config':
@@ -333,10 +328,6 @@ importers:
         specifier: ^5.3.3
         version: 5.8.2
 
-<<<<<<< HEAD
->>>>>>> faa5ba3 (Add: Database Package Seperation for Schemas)
-=======
->>>>>>> aab55d57029854e18379b45754f87bc27bf51fc7
   packages/eslint-config:
     devDependencies:
       '@eslint/js':
