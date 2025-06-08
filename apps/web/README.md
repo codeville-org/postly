@@ -35,8 +35,14 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+<!--
+
+
 "@nextplate/api": "workspace:_",
 "@nextplate/rpc": "workspace:_",
 "@repo/eslint-config": "workspace:^",
 "@repo/typescript-config": "workspace:^",
-"@repo/ui": "workspace:\*",
+"@repo/ui": "workspace:*",
+
+
+ -->

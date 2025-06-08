@@ -1,12 +1,12 @@
-import { desc, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import * as HttpStatusCodes from "stoker/http-status-codes";
 import * as HttpStatusPhrases from "stoker/http-status-phrases";
 
 import type { AppRouteHandler } from "@/types";
 
 import { db } from "@/db";
-import { tasks } from "@/db/schema";
 import { ZOD_ERROR_CODES, ZOD_ERROR_MESSAGES } from "@/lib/constants";
+import { tasks } from "@repo/database/schemas";
 
 import type {
   CreateRoute,
@@ -19,9 +19,9 @@ import type {
 // List tasks route handler
 export const list: AppRouteHandler<ListRoute> = async (c) => {
   const tasks = await db.query.tasks.findMany({
-    orderBy(fields) {
-      return desc(fields.createdAt);
-    }
+    // orderBy(fields) {
+    //   return desc(fields.createdAt);
+    // }
   });
 
   return c.json(tasks);
