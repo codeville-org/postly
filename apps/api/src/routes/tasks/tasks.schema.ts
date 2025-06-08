@@ -1,6 +1,7 @@
 import { createInsertSchema, createSelectSchema } from "drizzle-zod";
 
 import { tasks } from "@repo/database";
+import { z } from "zod";
 
 export const selectTaskSchema = createSelectSchema(tasks);
 
@@ -16,3 +17,8 @@ export const insertTaskSchema = createInsertSchema(tasks, {
   });
 
 export const updateTaskSchema = insertTaskSchema.partial();
+
+// Type Definitions
+export type Task = z.infer<typeof selectTaskSchema>;
+
+export type InsertTask = z.infer<typeof insertTaskSchema>;
