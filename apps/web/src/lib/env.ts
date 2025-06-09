@@ -3,6 +3,7 @@ import { z, ZodError } from "zod";
 const EnvSchema = z.object({
   NEXT_PUBLIC_APP_URL: z.string().optional(),
   NEXT_PUBLIC_BACKEND_URL: z.string().optional(),
+  NEXT_PUBLIC_BETTER_AUTH_URL: z.string().optional(),
 
   NEXT_PUBLIC_AWS_REGION: z.string().optional(),
   NEXT_PUBLIC_AWS_ACCESS_KEY_ID: z.string().optional(),

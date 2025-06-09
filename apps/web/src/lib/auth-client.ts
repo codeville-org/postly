@@ -6,10 +6,9 @@ import {
 import { createAuthClient } from "better-auth/react";
 import { toast } from "sonner";
 
-import { env } from "@/lib/env";
-
 export const authClient = createAuthClient({
-  baseURL: env.NEXT_PUBLIC_BACKEND_URL,
+  baseURL: process.env.NEXT_PUBLIC_BETTER_AUTH_URL,
+  trustedOrigins: ["http://localhost:8000", "http://localhost:3000"],
   plugins: [adminClient(), apiKeyClient(), organizationClient()],
   fetchOptions: {
     onError: (ctx) => {

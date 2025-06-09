@@ -1,9 +1,11 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
+import { cors } from "hono/cors";
 import { notFound, onError, serveEmojiFavicon } from "stoker/middlewares";
 import { defaultHook } from "stoker/openapi";
 
 import type { AppBindings, AppOpenAPI } from "@/types";
 
+import env from "@/env";
 import { BASE_PATH } from "@/lib/constants";
 import { logger } from "@/middlewares/pino-logger";
 import { auth } from "./auth";
@@ -21,6 +23,19 @@ export default function createApp(): OpenAPIHono<AppBindings> {
   // Middleware
   app.use(serveEmojiFavicon("🚀"));
   app.use(logger());
+
+  // ------ CORS Handler ------
+  app.use(
+    "*", // or replace with "*" to enable cors for all routes
+    cors({
+      origin: env.CLIENT_URL, // replace with your origin
+      allowHeaders: ["Content-Type", "Authorization", "Accept-Encoding"],
+      allowMethods: ["POST", "GET", "PATCH", "DELETE", "PUT", "OPTIONS"],
+      exposeHeaders: ["Content-Length"],
+      maxAge: 600,
+      credentials: true
+    })
+  );
 
   // -------------------------------------------------
   // Better auth Authentication Middleware

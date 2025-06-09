@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useCallback } from "react";
+import { useCallback, useId } from "react";
 import { CiFacebook } from "react-icons/ci";
 
 import { Button } from "@repo/ui/components/button";
@@ -12,12 +12,29 @@ import {
   CardTitle
 } from "@repo/ui/components/card";
 import { Input } from "@repo/ui/components/input";
+import { useAppForm } from "@repo/ui/components/tanstack-form";
 import { cn } from "@repo/ui/lib/utils";
+
+import { authClient } from "@/lib/auth-client";
+import { toast } from "sonner";
+import { type SignupSchema, signupSchema } from "../schemas";
 
 export function SignupForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const toastId = useId();
+
+  const form = useAppForm({
+    validators: { onChange: signupSchema },
+    defaultValues: {
+      email: "",
+      password: "",
+      confirmPassword: ""
+    },
+    onSubmit: ({ value }) => handleSignupWithEmail(value)
+  });
+
   const handleSubmit = useCallback(
     (e: React.FormEvent) => {
       e.preventDefault();
@@ -26,6 +43,28 @@ export function SignupForm({
     },
     [form]
   );
+
+  const handleSignupWithEmail = async (values: SignupSchema) => {
+    await authClient.signUp.email({
+      name: "",
+      email: values.email,
+      password: values.password,
+      fetchOptions: {
+        onRequest: () => {
+          toast.loading("Signing up...", { id: toastId });
+        },
+        onSuccess: () => {
+          toast.success("Signed up successfully!", { id: toastId });
+        },
+        onError: (ctx) => {
+          console.log(ctx);
+          toast.error(`Failed: ${ctx.error.message}`, {
+            id: toastId
+          });
+        }
+      }
+    });
+  };
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
@@ -113,7 +152,12 @@ export function SignupForm({
                 {/* -------- */}
 
                 <div className="grid gap-6">
-                  <Button type="submit" className="w-full">
+                  <Button
+                    type="submit"
+                    className="w-full"
+                    loading={form.state.isSubmitting}
+                    disabled={form.state.isSubmitting}
+                  >
                     Sign Up
                   </Button>
                 </div>
